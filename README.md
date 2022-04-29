@@ -1,5 +1,5 @@
 # Hero Squad
-
+A Java app that allows you to recruit a well-balanced team of superheroes.
 
 ## User Stories
 1. 
@@ -18,4 +18,4 @@
 1. Java
 
 ## Author Details
-Maryanne Njuguna Find me on Twitter and Linkedin @themaryanjuguna | [Linktree Profile](https://linktr.ee/themaryanjuguna)
+Maryanne Njuguna Find me on Twitter and Linkedi In @themaryanjuguna | [Linktree Profile](https://linktr.ee/themaryanjuguna)
