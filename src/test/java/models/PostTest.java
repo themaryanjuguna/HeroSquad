@@ -9,7 +9,7 @@ public class PostTest {
 
     @Test
     public void NewPostObjectGetsCorrectlyCreated_true() throws Exception {
-        hero hero = new hero("Day 1: Intro");
+        hero hero = new hero("Huey", "dob", "strength", "weakness");
         assertEquals(true, hero instanceof hero);
     }
 

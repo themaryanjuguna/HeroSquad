@@ -33,11 +33,14 @@
 
     <div class="b-example-divider"></div>
 
+    <section id="herolist">
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
             <div class="col-lg text-center text-lg-start">
                 <h1 class="display-4 fw-bold lh-1 mb-3">Hero List</h1>
 
+
+                {{#if heroes}} <!--if heroes exist, then -->
                     <table class="table">
                         <thead>
                         <tr>
@@ -49,25 +52,26 @@
                         </tr>
                         </thead>
                         <tbody>
+                        {{#each heroes }} <!--loop-->
                         <tr>
-                        {{#if heroes}} <!--if heroes exist, then -->
-                            {{#each heroes }} <!--loop-->
                         <td scope="row">1</td>
                         <td scope="row">{{ name }}</td><!--show-->
                         <td scope="row">{{ age }}</td>
                         <td scope="row">{{ strength }}</td>
-                        <td scope="row">{{ weakness }}</td>
-                    </tr>
+                        <td scope="row">{{ weakness }}</td>{{/each}}
+                        </tr>
+
                             </tbody>
                             </table>
-                    {{/each}}
+
                  {{else}} <!--no heroes!-->
-                    <tr>No Heroes at the moment</tr>
+                    <tr scope="row">No Heroes to show at the moment</tr>
                  {{/if}}
 
             </div>
         </div>
     </div>
+    </section>
 
     <div class="b-example-divider"></div>
 

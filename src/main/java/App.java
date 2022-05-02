@@ -23,13 +23,10 @@ public class App {
         post("/heroes/new", (request, response) ->{
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
-            String dob = request.queryParams("dob");
+           String dob = request.queryParams("dob");
             String strength = request.queryParams("strength");
             String weakness = request.queryParams("weakness");
-            hero newHero = new hero(name);
-            hero newDob   = new hero(dob);
-            hero newStrength = new hero(strength);
-            hero newWeakness  = new hero(weakness);
+            hero newHero = new hero(name, dob, strength, weakness);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
