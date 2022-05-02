@@ -9,8 +9,8 @@ public class PostTest {
 
     @Test
     public void NewPostObjectGetsCorrectlyCreated_true() throws Exception {
-        post post = new post("Day 1: Intro");
-        assertEquals(true, post instanceof models.post);
+        hero hero = new hero("Day 1: Intro");
+        assertEquals(true, hero instanceof hero);
     }
 
 

@@ -1,4 +1,4 @@
-import models.post;
+import models.hero;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -14,16 +14,22 @@ public class App {
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            ArrayList<post> posts = post.getAll();
-            model.put("posts", posts);
+            ArrayList<hero> heroes = hero.getAll();
+            model.put("heroes", heroes);
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
 
-        post("/posts/new", (request, response) ->{
+        post("/heroes/new", (request, response) ->{
             Map<String, Object> model = new HashMap<>();
-            String content = request.queryParams("content");
-            post newPost = new post(content);
+            String name = request.queryParams("name");
+            String dob = request.queryParams("dob");
+            String strength = request.queryParams("strength");
+            String weakness = request.queryParams("weakness");
+            hero newHero = new hero(name);
+            hero newDob   = new hero(dob);
+            hero newStrength = new hero(strength);
+            hero newWeakness  = new hero(weakness);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 

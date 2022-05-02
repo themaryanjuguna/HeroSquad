@@ -1,27 +1,31 @@
 {{#partial "content"}}
 
-
-    <div class="b-example-divider"></div>
-
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
             <div class="col-lg-7 text-center text-lg-start">
-                <h1 class="display-4 fw-bold lh-1 mb-3">Vertically centered hero sign-up form</h1>
+                <h1 class="display-4 fw-bold lh-1 mb-3">Add Your Hero</h1>
                 <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.
                 </p>
             </div>
             <div class="col-md-10 mx-auto col-lg-5">
-                <form action="/posts/new" method="post" class="p-4 p-md-5 border rounded-3 bg-light">
+                <form action="/heroes/new" method="post" class="p-4 p-md-5 border rounded-3 bg-light">
                     <div class="form-floating mb-3">
-                        <input type="text" id="content floatingInput" class="form-control" name="content" placeholder="Enter Heroes Name">
+                        <input type="text" id="name floatingInput" class="form-control" name="name" placeholder="Write Heroes Name">
                         <label for="floatingInput">Enter Heroes Name</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="date" class="form-control" id="date floatingInput" placeholder="Date of Birth">
-                        <label for="floatingPassword">Date of Birth</label>
+                        <input type="date" class="dob form-control" name="dob" id="dob floatingInput" placeholder="Date of Birth">
+                        <label for="floatingInput">Date of Birth</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" id="strength floatingInput" class="strength form-control" name="strength" placeholder="Heroes Strength">
+                        <label for="floatingInput">Heroes Strength</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" id="weakness floatingInput" class="weakness form-control" name="weakness" placeholder="Heroes Weakness">
+                        <label for="floatingInput">Heroes Weakness</label>
                     </div>
                     <button class="w-100 btn btn-lg btn-primary" type="submit">ADD HERO</button>
-                    <hr class="my-4">
                 </form>
             </div>
         </div>
@@ -31,11 +35,8 @@
 
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
-            <div class="col-lg-7 text-center text-lg-start">
+            <div class="col-lg text-center text-lg-start">
                 <h1 class="display-4 fw-bold lh-1 mb-3">Hero List</h1>
-
-                 {{#if posts}} <!--if posts exist, then -->
-                    {{#each posts }} <!--loop-->
 
                     <table class="table">
                         <thead>
@@ -47,35 +48,23 @@
                             <th scope="col">Weakness</th>
                         </tr>
                         </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>{{ content }}</td><!--show-->
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Otto</td>
+                        <tbody>
+                        <tr>
+                        {{#if heroes}} <!--if heroes exist, then -->
+                            {{#each heroes }} <!--loop-->
+                        <td scope="row">1</td>
+                        <td scope="row">{{ name }}</td><!--show-->
+                        <td scope="row">{{ age }}</td>
+                        <td scope="row">{{ strength }}</td>
+                        <td scope="row">{{ weakness }}</td>
                     </tr>
+                            </tbody>
+                            </table>
                     {{/each}}
-                 {{else}} <!--no posts!-->
+                 {{else}} <!--no heroes!-->
                     <tr>No Heroes at the moment</tr>
                  {{/if}}
-                    </tbody>
-                    </table>
 
-            </div>
-            <div class="col-md-10 mx-auto col-lg-5">
-                <form action="/posts/new" method="post" class="p-4 p-md-5 border rounded-3 bg-light">
-                    <div class="form-floating mb-3">
-                        <input type="text" id="content floatingInput" class="form-control" name="content" placeholder="Enter Heroes Name">
-                        <label for="floatingInput">Enter Heroes Name</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="date" class="form-control" id="date floatingInput" placeholder="Date of Birth">
-                        <label for="floatingPassword">Date of Birth</label>
-                    </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">ADD HERO</button>
-                    <hr class="my-4">
-                </form>
             </div>
         </div>
     </div>
