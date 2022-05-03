@@ -5,6 +5,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import static spark.Spark.*;
 
@@ -22,12 +23,22 @@ public class App {
 
         post("/heroes/new", (request, response) ->{
             Map<String, Object> model = new HashMap<>();
+            Set<String> heroNo = request.queryParams();
             String name = request.queryParams("name");
-           String dob = request.queryParams("dob");
+            String dob = request.queryParams("dob");
             String strength = request.queryParams("strength");
             String weakness = request.queryParams("weakness");
-            hero newHero = new hero(name, dob, strength, weakness);
+            String chooseSquad = request.queryParams("chooseSquad");
+
+
+            hero newHero = new hero(name, dob, strength, weakness, chooseSquad, 1);
             return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+        get("/shujaa",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "shujaa.hbs");
         }, new HandlebarsTemplateEngine());
 
 
