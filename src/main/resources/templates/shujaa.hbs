@@ -1,6 +1,6 @@
 {{#partial "content"}}
     <section>
-        <p class="text-center fs-3 fw-regular fw-semibold my-3">{{ profile.login }}'s Repositories</p>
+        <p class="text-center fs-3 fw-regular fw-semibold my-3">{{ name }}'s Repositories</p>
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 g-5">
@@ -8,23 +8,23 @@
 
                         <div class="col">
                             <div class="card-body bg-white">
-                                <p class="card-text"><span class="fw-bold mb-3 me-5">{{ repo.name }}</span>
+                                <p class="card-text"><span class="fw-bold mb-3 me-5">{{ dob }}</span>
 
                                     <span class="badge bg-info mb-3 mx-5"
-                                    >{{ repo.fork }} Forks</span
+                                    >{{ strength }} Forks</span
                                     >
-                                    <br> {{ repo.description }}</p>
+                                    <br> {{ weaknes}}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a
-                                                href="{{ repo.html_url }}"
+                                                href="/"
                                                 target="_blank"
                                                 class="btn btn-outline-success btn-sm"
-                                        >#</a
+                                        >Add your Shujaa</a
                                         >
-                                        <a href="{{ profile.html_url }}"
+                                        <a href="https://shujaastories.org/"
                                            target="_blank"
-                                           class="btn btn-danger btn-sm mx-3"> #</a
+                                           class="btn btn-danger btn-sm mx-3">image credit</a
                                         >
                                     </div>
                                     <small class="text-muted">Text</small>
@@ -39,3 +39,4 @@
     </section>
 
 {{/partial}}
+{{> layout.hbs}}
