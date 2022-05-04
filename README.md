@@ -12,7 +12,7 @@ A Java app that allows you to recruit a well-balanced team of superheroes.
 * Go to the [HeroSquad](https://github.com/themaryanjuguna/HeroSquad.git) repository on GitHub.
 * Clone the project into your local device.
 * On the terminal, navigate to the project directory and run `gradle compile`. Then navigate to the `main` directory in the build folder and run `java App`.
-* Project has been deployed on Heroku.
+* Project has been deployed on Heroku. [Live Link] (https://shujaasquad.herokuapp.com/)
 
 ## Dependencies
 1. Java
