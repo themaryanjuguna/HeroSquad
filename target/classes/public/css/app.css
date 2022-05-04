@@ -1,0 +1,13 @@
+#shuiaa-header{
+background-image: url("./../images/shujaas.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+#shujaasuccess{
+background-image: url("./../images/shujaasuccess.jpeg");
+background-repeat: no-repeat;
+height: 60vh;
+
+}
