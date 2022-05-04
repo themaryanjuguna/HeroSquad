@@ -1,0 +1,54 @@
+{{#partial "content"}}
+    <section>
+    {{#if heroes}} <!--if heroes exist, then -->
+        <p class="text-center fs-3 fw-regular fw-semibold my-3">Shujaa Stories</p>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 g-5">
+                    <div>
+
+                        <div class="col"{{#each heroes}}> <!--loop-->
+">
+                            <div class="card-body bg-dark">
+                                <img class="card-img-top" src="./../images/card.jpg" alt="Card image cap">
+                                <p class="card-text"><span class="fw-bold mb-3 me-5">{{ dob }}</span>
+
+                                    <span class="badge bg-info mb-3 mx-5"
+                                    >{{ strength }} Forks</span
+                                    >
+                                    <br> {{ weakness }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a
+                                                href="/"
+                                                target="_blank"
+                                                class="btn btn-outline-success btn-sm"
+                                        >Add your Shujaa</a
+                                        >
+                                        <a href="https://shujaastories.org/"
+                                           target="_blank"
+                                           class="btn btn-danger btn-sm mx-3">image credit</a
+                                        >
+                                    </div>
+                                    <small class="text-muted">Text</small>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{else}} <!--no heroes! -->
+        <main class="flex-shrink-0">
+            <div class="container">
+                <h1 class="mt-5 text-center">No Heroes to show at the moment.</h1>
+                <p class="lead text-center"> Come back Later</p>
+            </div>
+        </main>
+    {{/if}}
+
+    </section>
+
+{{/partial}}
+{{> layout.hbs}}

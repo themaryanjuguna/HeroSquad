@@ -1,0 +1,96 @@
+{{#partial "content"}}
+    <section id="shuiaa-header">
+
+    <div class="container col-xl-10 col-xxl-8 px-4 mb-3 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-lg-6 text-center text-lg-start bg-light opacity-75 mb-5">
+                <h1 class="display-4 fw-bold lh-1 mt-3">Shujaa Stories</h1>
+                <p class="col-lg-10 fs-6 mb-3"> <cite title="Source Title">Inspiration and imagers from: <a href="https://shujaastories.org/" target="_blank">Shujaa Stories</a></cite>
+                </p>
+                <p class="col-lg-10 fs-6 p-5">“Shujaa” is a Swahili word that means brave or courageous. It also refers to someone who is a hero. Who is your favourite pre- and post-colonial Hero? What are their Superpowers? What are some of their qualities you loved about them? Feel free do add their names and help commemorate some of our unsung heroes.
+                </p>
+            </div>
+            <div class="col-md-10 mx-auto col-lg-5">
+                <form action="/heroes/new" method="post" class="p-4 p-md-5 border rounded-3 bg-light">
+                    <div class="form-floating mb-3">
+                        <input type="text" id="name floatingInput" class="form-control" name="name" placeholder="Write Heroes Name">
+                        <label for="floatingInput">Enter Heroes Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" class="dob form-control" name="dob" id="dob floatingInput" placeholder="Era" min="1000-01-01" max="1960-01-01">
+                        <label for="floatingInput">Which Era - 1000-01-01 - 1960-01-01</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" id="strength floatingInput" class="strength form-control" name="strength" placeholder="Heroes Strength">
+                        <label for="floatingInput">Heroes Strength</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" id="weakness floatingInput" class="weakness form-control" name="weakness" placeholder="Heroes Weakness">
+                        <label for="floatingInput">Heroes Weakness</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <select type="text" name="chooseSquad" class="chooseSquad form-select" id="chooseSquad floatingSelect" aria-label="Floating label select example">
+                            <option selected>Open this select menu</option>
+                            <option value="pre-colonial">Pre-colonial</option>
+                            <option value="post-colonial">Post-colonial</option>
+                        </select>
+                        <label for="floatingSelect">Select Squad</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">ADD YOUR SHUJAA</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+    <div class="b-example-divider"></div>
+
+    <section id="herolist">
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-lg text-center text-lg-start">
+                <h1 class="display-4 fw-bold lh-1 mb-3">Hero List</h1>
+
+
+                {{#if heroes}} <!--if heroes exist, then -->
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Heroes Name</th>
+                            <th scope="col">Era they Existed in</th>
+                            <th scope="col">Strength</th>
+                            <th scope="col">Weakness</th>
+                            <th scope="col">Assign Squad</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#each heroes }} <!--loop-->
+                        <tr>
+                        <td scope="row">{{ heroNo }}</td>
+                        <td scope="row">{{ name }}</td><!--show-->
+                        <td scope="row">{{ dob }}</td>
+                        <td scope="row">{{ strength }}</td>
+                        <td scope="row">{{ weakness }}</td>
+                        <td scope="row">{{ chooseSquad }}</td>
+                        {{/each}}
+                        </tr>
+
+                            </tbody>
+                            </table>
+
+                 {{else}} <!--no heroes! -->
+                    <tr scope="row">No Heroes to show at the moment</tr>
+                 {{/if}}
+
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <div class="b-example-divider"></div>
+
+{{/partial}}
+
+{{> layout.hbs}}
