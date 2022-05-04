@@ -18,6 +18,7 @@ A Java app that allows you to recruit a well-balanced team of superheroes.
 1. Java
 2. Gradle
 3. Maven
+4. Heroku
 
 ## Technology used
 1. Java
